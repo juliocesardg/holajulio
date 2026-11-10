@@ -32,7 +32,8 @@
         cursor: pointer;
         text-decoration: none;
         width: 280px;
-        height: stretch;
+        // height: stretch;
+        height: 480px;
         @include mix.flex-col;
         justify-content: flex-start;
         align-items: flex-start;
@@ -67,7 +68,8 @@
         }
         &Info{
             width: 100%;
-            height: 250px;
+            // height: 250px;
+            height: 280px;
             margin: 0px;
             padding: 20px;
         }
@@ -112,7 +114,7 @@
             }
         }
         &:hover {
-            transform: translateY(4px);
+            transform: translateY(-10px);
             .projectItemImg {
                 transform: scale(1.08);
             }
