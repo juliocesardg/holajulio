@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background: #370001;
+}
+.audio{
+    &Btn{
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/audioOff.svg);
+        background-size: contain;
+        z-index: 1000;
+        &Cont{
+            display: none;
+            transform: scale(0);
+            opacity: 0;
+            position: absolute;
+            z-index: -1000;
+        }
+    }
+}
+.audioActive{
+    background-image: url(../img/audioOn.svg);
+}
+
+#stars{
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    margin: 0px auto;
+    overflow-x: clip; 
+    > i {
+        position: absolute;
+        background: rgba(255, 210, 137, 0.6);
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 
+                    0 0 15px rgba(255, 255, 255, 0.2), 
+                    0 0 25px rgba(255, 255, 255, 0.2);
+        animation: stars linear infinite; 
+    }
+}
+
+$white: #FFFFFF;
+$yellow: #F9B233;
+$green: #046965;
+
+$pink: #e54362;
+
+@import "components/__1-fonts";
+@import "components/__2-animaciones";
+@import "components/__3-modalBox";
+@import "components/__4-juego";
+@import "components/__5-resultado";

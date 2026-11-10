@@ -1,0 +1,170 @@
+// -----------------
+// BERKSHIRE
+// -----------------
+.berkshire{
+    font-family: "Berkshire Swash", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+// -----------------
+// PROXIMA NOVA FONT
+// -----------------
+@font-face {
+    font-family:ProximaNovaThin;
+src: url(../fonts/ProximaNova-Thin.eot);
+src: local(☺),
+    url(../fonts/ProximaNova-Thin.eot) format('embedded-opentype'),
+    url(../fonts/ProximaNova-Thin.woff) format('woff'),
+    url(../fonts/ProximaNova-Thin.ttf) format('truetype'),
+    url(../fonts/ProximaNova-Thin.otf) format('opentype'),
+    url(../fonts/ProximaNova-Thin.svg) format('svg');
+}
+@font-face {
+    font-family:ProximaNovaLight;
+src: url(../fonts/ProximaNova-Light.eot);
+src: local(☺),
+    url(../fonts/ProximaNova-Light.eot) format('embedded-opentype'),
+    url(../fonts/ProximaNova-Light.woff) format('woff'),
+    url(../fonts/ProximaNova-Light.ttf) format('truetype'),
+    url(../fonts/ProximaNova-Light.otf) format('opentype'),
+    url(../fonts/ProximaNova-Light.svg) format('svg');
+}
+@font-face {
+font-family:ProximaNova;
+src: url(../fonts/ProximaNova-Regular.eot);
+src: local(☺),
+    url(../fonts/ProximaNova-Regular.eot) format('embedded-opentype'),
+    url(../fonts/ProximaNova-Regular.woff) format('woff'),
+    url(../fonts/ProximaNova-Regular.ttf) format('truetype'),
+    url(../fonts/ProximaNova-Regular.otf) format('opentype'),
+    url(../fonts/ProximaNova-Regular.svg) format('svg');
+}
+@font-face {
+font-family:ProximaNovaMedium;
+src: url(../fonts/ProximaNova-Medium.eot);
+src: local(☺),
+    url(../fonts/ProximaNova-Medium.eot) format('embedded-opentype'),
+    url(../fonts/ProximaNova-Medium.woff) format('woff'),
+    url(../fonts/ProximaNova-Medium.ttf) format('truetype'),
+    url(../fonts/ProximaNova-Medium.otf) format('opentype'),
+    url(../fonts/ProximaNova-Medium.svg) format('svg');
+}
+@font-face {
+font-family:ProximaNovaSemibold;
+src: url(../fonts/ProximaNova-Semibold.eot);
+src: local(☺),
+    url(../fonts/ProximaNova-Semibold.eot) format('embedded-opentype'),
+    url(../fonts/ProximaNova-Semibold.woff) format('woff'),
+    url(../fonts/ProximaNova-Semibold.ttf) format('truetype'),
+    url(../fonts/ProximaNova-Semibold.otf) format('opentype'),
+    url(../fonts/ProximaNova-Semibold.svg) format('svg');
+}
+@font-face {
+font-family:ProximaNovaBold;
+src: url(../fonts/ProximaNova-Bold.eot);
+src: local(☺),
+    url(../fonts/ProximaNova-Bold.eot) format('embedded-opentype'),
+    url(../fonts/ProximaNova-Bold.woff) format('woff'),
+    url(../fonts/ProximaNova-Bold.ttf) format('truetype'),
+    url(../fonts/ProximaNova-Bold.otf) format('opentype'),
+    url(../fonts/ProximaNova-Bold.svg) format('svg');
+}
+
+@mixin proximaThin(){
+    font-family: ProximaNovaThin;
+}
+@mixin proximaLight(){
+    font-family: ProximaNovaLight;
+}
+@mixin proximaRegular(){
+    font-family: ProximaNova;
+}
+@mixin proximaMedium(){
+    font-family: ProximaNovaMedium;
+}
+@mixin proximaSemibold(){
+    font-family: ProximaNovaSemibold;
+}
+@mixin proximaBold(){
+    font-family: ProximaNovaBold;
+}
+// -----------------
+// ANCHORS
+// -----------------
+a{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:focus{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+
+@mixin btn(){
+    display: block;
+    width: fit-content;
+    height: auto;
+    margin: 0px auto;
+    color: $green;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    @include proximaSemibold();
+}
+
+.btn{
+    &Container{
+        list-style-type: none;
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    &Item{
+        display: block;
+        margin: 0px;
+    }
+    &Yellow{
+        @include proximaRegular();
+        @include btn();
+        background-color: $yellow;
+        color: $white;
+    }
+    &Off{
+        @include proximaRegular();
+        @include btn();
+        color: $white;
+        background-color: $green;
+        opacity: 10%;
+        cursor: not-allowed;
+    }
+    &Link{
+        cursor: pointer;
+        @include proximaSemibold();
+        display: block;
+        width: fit-content;
+        height: auto;
+        margin: 15px auto;
+        color: $green;
+        text-align: center;
+        text-decoration: underline;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

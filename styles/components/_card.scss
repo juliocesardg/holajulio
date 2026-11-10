@@ -1,0 +1,32 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.cards{
+    width: 100%;
+    height: auto;
+    @include mix.flex-col;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    &Container{
+        @include mix.flex-row;
+        justify-content: flex-start;
+        gap: 20px;
+        // overflow-x: scroll;
+        overflow-x: auto;
+    }
+    &Item{
+        width: 200px;
+        height: auto;
+        margin: 0px;
+        padding: 20px;
+        border: 1px solid var.$black-300;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        @include mix.flex-col;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex: 0 0 auto;
+    }
+}

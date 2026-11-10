@@ -1,0 +1,27 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.footer{
+    width: 100%;
+    height: auto;
+    border-top: 1px solid var.$primary-600;
+    &Container{
+        width: 90%;
+        max-width: 1200px;
+        height: auto;
+        margin: 0px auto;
+        padding: 10px 0px;
+        @include mix.flex-col;
+        gap: 5px;
+    }
+    &Text{
+        width: fit-content;
+        height: auto;
+        text-align: center;
+        color: var.$black-700;
+        font-weight: var.$font-weight-regular;
+        font-size: 14px;
+        text-wrap: pretty;
+    }
+}

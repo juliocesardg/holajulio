@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Componente_13_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 48 48">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+
+      .st1 {
+        fill: #046965;
+      }
+    </style>
+  </defs>
+  <circle id="Elipse_388" class="st0" cx="24" cy="24" r="24"/>
+  <path id="Icon_ionic-md-volume-high" class="st1" d="M11,20v9h6l7.5,7.84V12.16l-7.5,7.84h-6ZM31.25,24.5c.02-2.62-1.43-5.03-3.75-6.25v12.42c2.33-1.17,3.79-3.57,3.75-6.17ZM27.5,11v3.16c4.5,1.43,7.54,5.62,7.5,10.34.04,4.72-3,8.91-7.5,10.34v3.16c6.2-1.53,10.54-7.11,10.5-13.5.04-6.39-4.3-11.97-10.5-13.5Z"/>
+</svg>

@@ -1,0 +1,44 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.contact{
+    &Container{
+        @include mix.flex-row();
+        @media (max-width: 768px) {
+            @include mix.flex-col();
+        }
+    }
+    &Info{
+        width: 49%;
+        height: auto;
+        @media (max-width: 768px) {
+            @include mix.flex-col();
+            width: 100%;
+        }
+    }
+    &Text{
+        margin: 20px 0px 0px 0px;
+        max-width: 290px;
+        text-wrap: balance;
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: none;
+            text-align: center;
+        }
+    }
+    &Mail{
+        text-decoration: underline;
+        color: var.$primary-600;
+        font-weight: var.$font-weight-medium;
+    }
+    &Image{
+        width: 49%;
+        height: 300px;
+        background: transparent url('../media/images/contacto.png') no-repeat center;
+        background-size: 300px 300px;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}

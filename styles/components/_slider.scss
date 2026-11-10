@@ -1,0 +1,109 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 30px;
+    box-sizing: border-box;
+    &Viewport {
+        width: 100%;
+        overflow: hidden;
+        touch-action: pan-y;
+        // cursor: grab;
+        &:active {
+            cursor: grabbing;
+        }
+    }
+    &List {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 20px;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        // El movimiento lo controla JavaScript
+        overflow: visible;
+        transition: transform 0.4s ease;
+        will-change: transform;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    &Item {
+        // Ancho de referencia de cada tarjeta
+        flex: 0 0 260px;
+        width: 260px;
+        min-width: 0;
+        box-sizing: border-box;
+        scroll-snap-align: unset;
+    }
+    // Flechas
+    &Arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        color: var.$black-700;
+        background: var.$white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: opacity 0.2s ease, background 0.2s ease;
+        &:hover {
+            background: var.$primary-500;
+        }
+        &:disabled {
+            opacity: 0.3;
+            cursor: default;
+        }
+    }
+    &Prev {
+        left: 0;
+    }
+    &Next {
+        right: 0;
+    }
+    // Indicadores
+    &Dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    &Dot {
+        width: 9px;
+        height: 9px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: var(--scrollbar-thumb);
+        opacity: 0.4;
+        cursor: pointer;
+        transition: opacity 0.2s ease,
+                    transform 0.2s ease;
+        &.active {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .sliderList {
+            transition: none;
+        }
+    }
+}

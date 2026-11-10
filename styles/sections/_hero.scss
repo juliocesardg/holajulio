@@ -1,0 +1,79 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.hero{
+    padding-top: 60px;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('../media/images/back-white.jpg') bottom center no-repeat;
+        background-size: cover;
+        opacity: 0.5;
+        z-index: -1;
+    }
+    &Container{
+        @include mix.flex-row();
+        @media (max-width: 1024px) {
+            @include mix.flex-col();
+        }
+    }
+    &Text{
+        width: 49%;
+        height: auto;
+        @media (max-width: 1024px) {
+            width: 100%;
+            @include mix.flex-row();
+            justify-content: space-evenly;
+            .heroTextFirst{
+                width: fit-content;
+            }
+            .heroTextSecond{
+                width: 50%;
+            }
+        }
+        @media (max-width: 700px) {
+            @include mix.flex-col();
+            margin-top: 40px;
+            .heroTextSecond{
+                width: 100%;
+            }
+        }
+        .title{
+            width: fit-content;
+            height: auto;
+            font-size: 40px;
+        }
+        .subtitle{
+            width: fit-content;
+            height: auto;
+            font-size: 24px;
+        }
+        .text{
+            width: fit-content;
+            max-width: 470px;
+            height: auto;
+            margin-top: 20px;
+            @media (max-width: 1024px) {
+                width: 100%;
+                max-width: none;
+                text-wrap: pretty;
+            }
+        }
+    }
+    &Image{
+        width: 500px;
+        height: 500px;
+        background: transparent url('../media/images/hero.png') no-repeat center;
+        background-size: 500px 500px;
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+    }
+    .chevron{
+        animation: bounce 1s ease infinite;
+        transition: all 0.3s ease-in-out;
+    }
+}

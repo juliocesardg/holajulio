@@ -1,0 +1,40 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.chevron{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+    margin: 0px auto;
+    width: 12px;
+    height: 12px;
+    &::before {
+        content: '';
+        display: inline-block;
+        position: relative;
+        left: 2px;
+        top: 2px;
+        width: 12px;
+        height: 12px;
+        transform: rotate(-45deg);
+        vertical-align: top;
+        border-style: solid;
+        border-width: 2px 2px 0 0;
+    }
+    &.right:before {
+        left: 0;
+        transform: rotate(45deg);
+    }
+    
+    &.bottom:before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    
+    &.left:before {
+        left: 4px;
+        transform: rotate(-135deg);
+    }
+}

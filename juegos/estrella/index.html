@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CAMBIAR EL TÍTULO DEL JUEGO -->
+    <title>Sé la estrella</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- FACEBOOK -->
+    <meta property="og:title" content="Rally Navideño 2025">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="https://bienestar.gs/media/jwnbpb2n/redessociales.jpg">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="portalsocio.gs">
+    <meta property="og:image:width" content="495">
+    <meta property="og:image:height" content="249">
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="portalsocio.gs">
+    <meta name="twitter:title" content="Rally Navideño 2025">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="@familiasocios">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:domain" content="portalsocio.gs"/>
+    <meta name="twitter:image" content="https://bienestar.gs/media/jwnbpb2n/redessociales.jpg">
+    <!-- ACTUALIZAR SCRIPT (PENDIENTE) -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-53622411-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-53622411-4');
+    </script>
+</head>
+<body class="body">
+    <!-- BOTÓN DE AUDIO -->
+    <div class="audioCont">
+        <audio src="img/audio.mp3" loop id="audioGlobalDom"></audio>
+    </div>
+    <!-- JUEGO -->
+    <div class="juego">
+        <div class="info">
+            <div class="morfo"></div>
+            <div id="score" class="hidden">Puntos: 0</div>
+            <div id="health-container" class="hidden">
+                <div id="health-bar"></div>
+            </div>
+        </div>
+        <div id="game" class="hidden">
+            <div class="gameContainer">
+                <div class="lane" data-key="a">
+                    <div class="hitbox rojo"></div>
+                    <div class="flash rojo-on"></div>
+                </div>
+                <div class="lane" data-key="s">
+                    <div class="hitbox azul"></div>
+                    <div class="flash azul-on"></div>
+                </div>
+                <div class="lane" data-key="d">
+                    <div class="hitbox amarillo"></div>
+                    <div class="flash amarillo-on"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL BOX DE INICIO -->
+    <div id="modalStart" class="modal modalStart">
+        <div class="modalContainer" id="stars">
+            <div class="modalInstruction">
+                <div class="modalMorfo bounce-in-top"></div>
+                <p class="modalTitle">
+                    Sé la estrella
+                </p>
+                <p class="modalText">
+                    Toca las notas correctas y sé la estrella en el concierto navideño.
+                </p>
+                <a class="btnYellow close" id="start">Continuar</a>
+                <div class="modalIlustration">
+                    <div class="modalIlustrationSun bounce-in-bottom"></div>
+                    <div class="modalIlustrationCloud jello-horizontal"></div>
+                    <div class="modalIlustrationRoy"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL BOX DE CIERRE -->
+    <div id="modalEnd" class="modal modalEnd">
+        <div class="modalContainer">
+            <div class="modalRank">
+                <div class="modalMorfo"></div>
+                <div class="pergamino">
+                    <div class="pergaminoContainer pergamino1 rotate-vert-center" id="pergamino1">
+                        <div class="pergaminoRank" id="rank1">
+                            <p class="pergaminoTitle">
+                                ¿Qué tanto te gustó este jueguito?
+                            </p>
+                            <div class="rating">
+                                <div class="ratingContainer">
+                                    <input type="radio" name="star" id="star5"/>
+                                    <label for="star5"></label>
+                                    <input type="radio" name="star" id="star4"/>
+                                    <label for="star4"></label> 
+                                    <input type="radio" name="star" id="star3"/>
+                                    <label for="star3"></label> 
+                                    <input type="radio" name="star" id="star2"/>
+                                    <label for="star2"></label> 
+                                    <input type="radio" name="star" id="star1"/>
+                                    <label for="star1"></label> 
+                                </div>
+                                <p class="ratingAlert scale-up-center">
+                                    Califica para continuar
+                                </p>
+                            </div>
+                            <a class="btnOff">Continuar</a>
+                            <a class="btnLink playAgain">Jugar de nuevo</a>
+                        </div>
+                        <div class="pergaminoRank pergaminoRank2" id="rank2">
+                            <p class="pergaminoSubtitle"></p>
+                            <p class="pergaminoText">
+                                ¿Qué podríamos mejorar en este juego?
+                            </p>
+                            <textarea class="pergaminoTextarea" name="dislike" id="dislike" placeholder="Cuéntanos"></textarea>
+                            <a class="btnOff">Continuar</a>
+                            <a class="btnLink" id="back">Regresar</a>
+                        </div>
+                    </div>
+                    <div class="pergaminoContainer pergamino2 rotate-vert-center" id="pergaminoBien">
+                        <div class="pergaminoBien">
+                            <p class="pergaminoTitle">
+                                ¡Lo hiciste excelente!
+                            </p>
+                            <div class="imgBien"></div>
+                            <a class="btnYellow">Continuar</a>
+                            <a class="btnLink playAgain" id="restartBtn">Jugar de nuevo</a>
+                        </div>
+                    </div>
+                    <div class="pergaminoContainer pergamino3 rotate-vert-center" id="pergaminoMal">
+                        <div class="pergaminoMal">
+                            <p class="pergaminoTitle">
+                                Uy, estuviste cerca, ¡vuelve a intentarlo!
+                            </p>
+                            <div class="imgMal"></div>
+                            <a class="btnYellow">Continuar</a>
+                            <a class="btnLink playAgain" id="restartBtn">Jugar de nuevo</a>
+                        </div>
+                    </div>
+                    <div class="pergaminoContainer pergamino4 rotate-vert-center" id="pergaminoFinal">
+                        <div class="pergaminoPista">
+                            <div>
+                                <p class="pergaminoTitle">
+                                    ¡Encontramos la esperanza!
+                                </p>
+                                <p class="pergaminoText">
+                                    Ahi está... la estrella de Belén
+                                </p>
+                            </div>
+                            <div class="imgPista"></div>
+                            <a class="btnYellow">Avanza</a>
+                            <a class="btnLink playAgain" id="restartBtn">Jugar de nuevo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>

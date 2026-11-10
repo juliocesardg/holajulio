@@ -1,0 +1,45 @@
+
+// ABSATRACTS
+@use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
+
+// BASE
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/themes';
+@use 'base/animations';
+
+// COMPONENTS
+@use 'components/nav';
+@use 'components/button';
+@use 'components/card';
+@use 'components/slider';
+@use 'components/modal';
+@use 'components/icons';
+@use 'components/footer';
+
+// SECTIONS
+@use 'sections/general';
+@use 'sections/hero';
+@use 'sections/about';
+@use 'sections/skills';
+@use 'sections/projects';
+@use 'sections/contact';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 16px;
+    background: var.$black-100;
+    background: url('../media/images/bodyback-white.png') center repeat fixed;
+	background-size: 600px 600px;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}

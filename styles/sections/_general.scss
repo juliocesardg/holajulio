@@ -1,0 +1,20 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.section{
+    width: 100%;
+    height: auto;
+    // min-height: calc(100vh - 60px);
+    // min-height: 100vh;
+    
+    &Container{
+        width: 90%;
+        max-width: 1200px;
+        height: auto;
+        min-height: calc(100vh - 60px);
+        margin: 0px auto;
+        padding: 0;
+        @include mix.flex-col();
+    }
+}

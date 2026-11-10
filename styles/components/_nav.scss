@@ -1,0 +1,165 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.nav{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var.$primary-600;
+    position: fixed;
+    z-index: 1000;
+    background: transparent;
+    isolation: isolate;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    &Container{
+        width: 90%;
+        max-width: 1200px;
+        height: 59px;
+        margin: 0px auto;
+        padding: 0;
+        @include mix.flex-row;
+        justify-content: space-between;
+        @media (max-width: 650px) {
+            justify-content: flex-start;
+        }
+    }
+    &Logo{
+        svg{
+            width: 40px;
+            height: 40px;
+            path{
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+    &List{
+        list-style-type: none;
+        width: fit-content;
+        height: auto;
+        @include mix.flex-row;
+        gap: 0px;
+        @media screen and (max-width: 650px){
+            display: none;
+        }
+        &Item{
+            a{
+                cursor: pointer;
+                display: inline-block;
+                width: fit-content;
+                height: auto;
+                margin: 0;
+                padding: 20px 10px;
+                text-decoration: none;
+                color: var.$black-700;
+                font-weight: var.$font-weight-regular;
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    background-color: var.$primary-500;
+                }
+            }
+        }
+    }
+    .mobile {
+        width: 100vw;
+        height: calc(100vh - 60px);
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: all 0.3s ease-in-out;
+        visibility: hidden;
+        &.active {
+            visibility: visible;
+        }
+        &List {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+            padding-left: 0;
+            list-style-type: none;
+            &Item {
+                padding: 1em;
+                a {
+                    color: var.$black-700;
+                    text-decoration: none;
+                    font-size: 1.5em;
+                }
+            }
+        }
+        &Input{
+            display: none;
+            &:checked ~ #mobile {
+                visibility: visible;
+            }
+            &:checked ~ #mobileButton {
+                &:hover span, span{
+                    background: transparent;
+                }
+                span {
+                    &:before {
+                        transform: rotate(45deg) translate(6px, 6px);
+                        opacity: 1;
+                    }
+                    &:after {
+                        transform: rotate(-45deg) translate(6px, -6px);
+                    }
+                }
+            }
+        }
+        &Button {
+            @media screen and (min-width: 651px){
+                display: none;
+            }
+            cursor: pointer;
+            z-index: 50;
+            padding: 20px 5px;
+            user-select: none;
+            span {
+                width: 29px;
+                height: 2px;
+                border-radius: 2px;
+                background-color: var.$black-700;
+                position: relative;
+                display: block;
+                transition: all .2s ease-in-out;
+                &:before {
+                    top: -8px;
+                    visibility: visible;
+                }
+                &:after {
+                    top: 8px;
+                }
+                &:before, &:after {
+                    width: 29px;
+                    height: 2px;
+                    border-radius: 2px;
+                    background-color: var.$black-700;
+                    position: absolute;
+                    content: "";
+                    transition: all .2s ease-in-out;
+                }
+            }
+            &:hover span, &:hover span:before, &:hover span:after {
+                background-color: var.$primary-500;
+            }
+        }
+    }
+}

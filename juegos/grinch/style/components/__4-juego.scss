@@ -1,0 +1,392 @@
+.game{
+    width: 100%;
+    height: auto;
+    &Container{
+        position: relative;
+        width: 100%;
+        max-width: 1018px;
+        height: 100dvh;
+        margin: 0px auto;
+        background: transparent url(../img/fondoLineas.png) repeat-x top;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &First{
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+    }
+    .modalMorfo{
+        margin: 20px auto 0px;
+    }
+    .controls{
+        list-style-type: none;
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+        margin: 20px auto 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        &Item{
+            width: fit-content;
+            height: auto;
+            margin: 0px;
+            @include proximaSemibold;
+            text-align: center;
+            color: #ffd289;
+            font-size: 25px;
+            &:nth-child(2){
+                padding: 10px 0px 10px 60px;
+                background: transparent url(../img/grinchCounter.png) no-repeat left center;
+                background-size: 50px;
+            }
+        }
+    }
+    .chimenea{
+        position: relative;
+        bottom: 0px;
+        width: 100%;
+        max-width: 500px;
+        // max-width: 700px;
+        margin: 0px auto;
+        &::after{
+            content: "";
+            display: block;
+            padding-bottom: 90%;
+        }
+        &Img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent url(../img/chimenea.png) no-repeat center;
+            background-size: contain;
+            filter: drop-shadow(0px -10px 10px rgba(255, 0, 0, 1));
+            opacity: 0.4;
+        }
+    }
+    .botas{
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 90%;
+        max-width: 550px;
+        height: auto;
+        margin: 0px auto;
+        &Container{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        &Group{
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            &:nth-child(odd){
+                justify-content: flex-start;
+            }
+            &:nth-child(even){
+                justify-content: flex-end;
+            }
+        }
+        .arriba{
+            margin-top: 50px;
+            // margin-top: 50%;
+        }
+        &Item{
+            list-style-type: none;
+            position: relative;
+            width: 50%;
+            max-width: 100px;
+            .toy{
+                position: absolute;
+                display: block;
+                width: 90%;
+                max-width: 60px;
+                height: 90px;
+                left: 0;
+                right: 0;
+                top: 0;
+                opacity: 0;
+                scale: 0;
+                margin: 0px auto;
+                background: transparent url(../img/robot.png) no-repeat center;
+                background-size: contain;
+                transition: opacity 0.2s, top 0.2s, scale 0.2s;
+                &Active{
+                    top: -60px;
+                    opacity: 1;
+                    scale: 1;
+                    &After{
+                        display: block;
+                        margin: 0px auto;
+                        z-index: 900;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 4px solid red;
+                        background: transparent url(../img/mal.svg) no-repeat center;
+                        background-size: 30px;
+                        background-color: rgba($color: red, $alpha: 0.4);
+                    }
+                }
+            }
+            .grinch{
+                position: absolute;
+                display: block;
+                width: 90%;
+                max-width: 50px;
+                height: 90px;
+                left: 0;
+                right: 0;
+                top: 0;
+                opacity: 0;
+                scale: 0;
+                margin: 0px auto;
+                background: transparent url(../img/grinch.png) no-repeat center;
+                background-size: contain;
+                transition: opacity 0.2s, top 0.2s, scale 0.2s;
+                &Active{
+                    top: -80px;
+                    opacity: 1;
+                    scale: 1;
+                    &After{
+                        display: block;
+                        margin: 0px auto;
+                        z-index: 900;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 4px solid green;
+                        background: transparent url(../img/bien.svg) no-repeat center;
+                        background-size: 30px;
+                        background-color: rgba($color: green, $alpha: 0.4);
+                    }
+                }
+            }
+            .parche1{
+                position: absolute;
+                z-index: 10;
+                width: 100%;
+                max-width: 100px;
+                height: auto;
+                background: transparent url(../img/bota-parche-izquierdo.png) no-repeat top right;
+                background-size: cover;
+                &:after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }
+            }
+            .parche2{
+                position: absolute;
+                z-index: 10;
+                width: 100%;
+                max-width: 100px;
+                height: auto;
+                background: transparent url(../img/bota-parche-derecho.png) no-repeat top left;
+                background-size: cover;
+                &:after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }
+            }
+            &:after{
+                content: "";
+                display: block;
+                // padding-bottom: 100%;
+                padding-bottom: 130%;
+            }
+        }
+        &1{
+            background: transparent url(../img/bota-izquierda.png) no-repeat bottom center;
+            background-size: contain;
+            margin-top: 30%;
+        }
+        &2{
+            background: transparent url(../img/bota-izquierda.png) no-repeat top center;
+            background-size: contain;
+        }
+        &3{
+            background: transparent url(../img/bota-derecha.png) no-repeat top center;
+            background-size: contain;
+        }
+        &4{
+            background: transparent url(../img/bota-derecha.png) no-repeat bottom center;
+            background-size: contain;
+            margin-top: 30%;
+        }
+        &5{
+            background: transparent url(../img/bota-izquierda.png) no-repeat bottom center;
+            background-size: contain;
+            margin-top: 30%;
+        }
+        &6{
+            background: transparent url(../img/bota-izquierda.png) no-repeat top center;
+            background-size: contain;
+        }
+        &7{
+            background: transparent url(../img/bota-derecha.png) no-repeat top center;
+            background-size: contain;
+        }
+        &8{
+            background: transparent url(../img/bota-derecha.png) no-repeat bottom center;
+            background-size: contain;
+            margin-top: 30%;
+        }
+    }
+    .botas{
+        &1{
+            .toy{
+                left: 20px;
+            }
+            .grinch{
+                left: 20px;
+            }
+        }
+        &2{
+            .toy{
+                left: 20px;
+                background: transparent url(../img/dino.png) no-repeat center;
+                background-size: contain;
+                &Active{
+                    top: -60px;
+                    opacity: 1;
+                    scale: 1;
+                    &After{
+                        display: block;
+                        margin: 0px auto;
+                        z-index: 900;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 4px solid red;
+                        background: transparent url(../img/mal.svg) no-repeat center;
+                        background-size: 30px;
+                        background-color: rgba($color: red, $alpha: 0.4);
+                    }
+                }
+            }
+            .grinch{
+                left: 20px;
+            }
+        }
+        &3{
+            .toy{
+                right: 30px;
+            }
+            .grinch{
+                right: 30px;
+            }
+        }
+        &4{
+            .toy{
+                right: 30px;
+                background: transparent url(../img/dino.png) no-repeat center;
+                background-size: contain;
+                &Active{
+                    top: -60px;
+                    opacity: 1;
+                    scale: 1;
+                    &After{
+                        display: block;
+                        margin: 0px auto;
+                        z-index: 900;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 4px solid red;
+                        background: transparent url(../img/mal.svg) no-repeat center;
+                        background-size: 30px;
+                        background-color: rgba($color: red, $alpha: 0.4);
+                    }
+                }
+            }
+            .grinch{
+                right: 30px;
+            }
+        }
+        &5{
+            .toy{
+                left: 20px;
+            }
+            .grinch{
+                left: 20px;
+            }
+        }
+        &6{
+            .toy{
+                left: 20px;
+                background: transparent url(../img/dino.png) no-repeat center;
+                background-size: contain;
+                &Active{
+                    top: -60px;
+                    opacity: 1;
+                    scale: 1;
+                    &After{
+                        display: block;
+                        margin: 0px auto;
+                        z-index: 900;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 4px solid red;
+                        background: transparent url(../img/mal.svg) no-repeat center;
+                        background-size: 30px;
+                        background-color: rgba($color: red, $alpha: 0.4);
+                    }
+                }
+            }
+            .grinch{
+                left: 20px;
+            }
+        }
+        &7{
+            .toy{
+                right: 30px;
+            }
+            .grinch{
+                right: 30px;
+            }
+        }
+        &8{
+            .toy{
+                right: 30px;
+                background: transparent url(../img/dino.png) no-repeat center;
+                background-size: contain;
+                &Active{
+                    top: -60px;
+                    opacity: 1;
+                    scale: 1;
+                    &After{
+                        display: block;
+                        margin: 0px auto;
+                        z-index: 900;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 4px solid red;
+                        background: transparent url(../img/mal.svg) no-repeat center;
+                        background-size: 30px;
+                        background-color: rgba($color: red, $alpha: 0.4);
+                    }
+                }
+            }
+            .grinch{
+                right: 30px;
+            }
+        }
+    }
+}

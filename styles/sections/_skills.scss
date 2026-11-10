@@ -1,0 +1,160 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.skills{
+    &Container{
+        gap: 30px;
+    }
+    &Info{
+        width: fit-content;
+        height: auto;
+        @include mix.flex-col;
+        gap: 0px;
+        .title, .subtitle, .text{
+            text-wrap: balance;
+            text-align: center;
+            width: fit-content;
+            height: auto;
+        }
+        .text{
+            margin: 10px auto 0px;
+        }
+    }
+    // &List{
+    //     width: 100%;
+    //     max-width: 1080px;
+    //     height: auto;
+    //     margin: 0px auto 0px;
+    //     list-style-type: none;
+        
+    //     scroll-snap-type: x mandatory;
+    //     overflow-x: auto;
+    //     // Firefox
+    //     scrollbar-width: thin;
+    //     scrollbar-color: var(--scrollbar-thumb) transparent;
+    //     // Chrome, Safari y Edge
+    //     &::-webkit-scrollbar {
+    //         height: 6px;
+    //     }
+    //     &::-webkit-scrollbar-track {
+    //         background: transparent;
+    //     }
+    //     &::-webkit-scrollbar-thumb {
+    //         background: var(--scrollbar-thumb);
+    //         border-radius: 10px;
+    //     }
+    //     &::-webkit-scrollbar-thumb:hover {
+    //         background: var(--scrollbar-thumb-hover);
+    //     }
+    // }
+    &List {
+    width: 100%;
+    max-width: 1080px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px 4px 16px;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: var(--scrollbar-thumb-hover);
+        }
+    }
+    // &Item{
+    //     height: stretch;
+    //     background: var.$white;
+    //     border: none;
+    //     // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+    //     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    //     gap: 20px;
+    //     scroll-snap-align: center;
+    // }
+    &Item {
+        flex: 0 0 200px;
+        width: 200px;
+        min-width: 0;
+        height: auto;
+        background: var.$white;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        gap: 20px;
+        scroll-snap-align: start;
+    }
+    &Name{
+        color: var.$black-700;
+        font-weight: var.$font-weight-medium;
+        font-size: 18px;
+        text-align: center;
+        margin: 0px auto 0px;
+        transition: all 0.3s ease-in-out;
+    }
+    &Description{
+        color: var.$black-700;
+        font-weight: var.$font-weight-regular;
+        font-size: 14px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+    &Icon{
+        width: 100%;
+        height: 60px;
+        margin: 10px auto 0px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        &.html{
+            background-image: url('../media/images/skillsIcon-html.svg');
+        }
+        &.css{
+            background-image: url('../media/images/skillsIcon-css.svg');
+        }
+        &.sass{
+            background-image: url('../media/images/skillsIcon-sass.svg');
+        }
+        &.js{
+            background-image: url('../media/images/skillsIcon-js.svg');
+        }
+        &.github{
+            background-image: url('../media/images/skillsIcon-github.svg');
+        }
+        &.responsive{
+            background-image: url('../media/images/skillsIcon-responsive.svg');
+        }
+        &.email{
+            background-image: url('../media/images/skillsIcon-email.svg');
+        }
+        &.figma{
+            background-image: url('../media/images/skillsIcon-figma.svg');
+        }
+        &.xd{
+            background-image: url('../media/images/skillsIcon-xd.svg');
+        }
+        &.ps{
+            background-image: url('../media/images/skillsIcon-ps.svg');
+        }
+        &.ai{
+            background-image: url('../media/images/skillsIcon-ai.svg');
+        }
+        &.ae{
+            background-image: url('../media/images/skillsIcon-ae.svg');
+        }
+    }
+}

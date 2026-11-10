@@ -1,0 +1,188 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+// CHECKBOX
+.hidden-checkbox {
+    display: none;
+    &:checked + .toggle-button .sun {
+        opacity: 0;
+        transform: rotate(180deg);
+    }
+    &:checked + .toggle-button .moon {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.container {
+    @include mix.flex-col();
+    @media (max-width: 650px) {
+        margin-left: auto;
+    }
+}
+
+.toggle-button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    padding: 10px;
+    background: var.$black-100;
+    border-radius: 50%;
+    border: none;
+    @include mix.flex-col();
+    transition: background 0.3s, transform 0.5s ease-in-out;
+    &:has(.hidden-checkbox:checked) {
+        transform: rotate(180deg);
+    }
+    &:hover {
+        background: var.$black-200;
+    }
+}
+
+body{
+    &:has(.hidden-checkbox:checked) .toggle-button {
+        background: var.$black;
+    }
+    &:has(.hidden-checkbox:checked) .toggle-button:hover {
+        background: var.$black-700;
+    }
+    &:has(.hidden-checkbox:checked) {
+        background: url('../media/images/bodyback-black.png') center repeat fixed;
+        background-size: 600px 600px;
+        .hero{
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: url('../media/images/back-black.jpg') bottom center no-repeat;
+                background-size: cover;
+                opacity: 0.5;
+                z-index: -1;
+            }
+        }
+        .nav{
+            border-bottom: 1px solid var.$primary-500;
+            background: rgba(0, 0, 0, 0.5);
+            &::before {
+                background: rgba(0, 0, 0, 0.5);
+            }
+            &Logo{
+                svg{
+                    path{
+                        fill: var.$white;
+                    }
+                };
+            }
+            &List{
+                &Item{
+                    a{
+                        color: var.$white;
+                        &:hover{
+                            color: var.$black;
+                            background-color: var.$primary-500;
+                        }
+                    }
+                }
+            }
+            .mobile{
+                background: rgba(0, 0, 0, 0.5);
+                &List{
+                    &Item{
+                        a{
+                            color: var.$white;
+                            &:hover{
+                                color: var.$black;
+                                background-color: var.$primary-500;
+                            }
+                        }
+                    }
+                }
+            }
+            .mobileButton span{
+                background-color: var.$white;
+                &:before, &:after {
+                    background-color: var.$white;
+                }
+            }
+        }
+        .title, .subtitle, .text, .chevron, .moon, 
+        .skillsName, .skillsDescription, .footerText, .modalSection h3 {
+            color: var.$white;
+        }
+        .skillsItem, .projectItem{
+            background: var.$black-800;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+        }
+        .projectItem{
+            border: 1px solid var.$black-700;
+        }
+        .modalSection a{
+            color: var.$primary-500;
+            &:hover{
+                color: var.$primary-500;
+                text-decoration: underline;
+            }
+        }
+        .modal{
+            background: var.$black-900;
+            &::backdrop{
+                background: rgba(0, 0, 0, 0.3);
+            }
+            &Title, &Text {
+                color: var.$white;
+            }
+            &Tools{
+                li{
+                    color: var.$white;
+                }
+            }
+            &Close{
+                color: var.$white;
+                background: var.$black;
+                &:hover{
+                    background: var.$black-700;
+                }
+            }
+        }
+        .contactMail{
+            color: var.$primary-500;
+        }
+        .footer{
+            border-top: 1px solid var.$primary-500;
+            &Text{
+                color: var.$white;
+            }
+        }
+    }
+}
+
+.icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+    &-wrapper {
+        position: relative;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.moon {
+    opacity: 0;
+    transform: rotate(-180deg);
+}
+
+:root {
+    --scrollbar-thumb: #c5c5c5;
+    --scrollbar-thumb-hover: #999999;
+}
+
+[data-theme="dark"] {
+    --scrollbar-thumb: #555555;
+    --scrollbar-thumb-hover: #777777;
+}

@@ -1,0 +1,464 @@
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 500;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    &Start{
+        display: flex;
+        position: fixed;
+        z-index: 500;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-image: 
+            url('../img/estrellas.png'),
+            linear-gradient(0deg, rgb(100, 169, 150) 10%, rgb(2, 105, 101) 60%, rgb(0, 70, 68)),
+            radial-gradient(circle,rgba(0, 70, 68, 1) 10%, rgba(0, 70, 68, 1) 60%, rgba(0, 70, 68, 1) 100%);
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position: top -20% center, center, bottom center;
+        background-size: 360px, cover, 150% 150%; 
+        @media screen and (min-width: 768px) {
+            background-position: top 0 center, center, bottom center;
+        }
+        .btnYellow{
+            z-index: 100;
+        }
+    }
+    &End{
+        background: url(../img/estrellas.png), linear-gradient(0deg, rgb(100, 169, 150) 10%, rgb(2, 105, 101) 60%, rgb(0, 70, 68)) ;
+        background-size: 360px, cover;
+        background-repeat: no-repeat;
+        background-position: top center, center;
+    }
+    .start{
+        &Title{
+            width: 210px;
+            height: auto;
+            margin: 0px auto;
+            @include proximaMedium;
+            text-align: center;
+            font-size: 22px;
+            color: #ffd289;
+        }
+        &Text{
+            width: fit-content;
+            height: auto;
+            margin: 0px auto 0px;
+            @include proximaRegular;
+            text-align: center;
+            text-wrap: balance;
+            font-size: 16px;
+            color: #ffd289;
+            span{
+                @include proximaBold;
+            }
+        }
+    }
+    &Container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // background: #060532 url(../img/fondoGeneral.jpg) no-repeat center;
+        // background-size: cover;
+        animation-name: openmodal;
+        animation-duration: 0.4s;
+        overflow-y: scroll;
+    }
+    &Instruction{
+        z-index: 200;
+        width: 90%;
+        max-width: 400px;
+        height: 100dvh;
+        margin: 20px auto 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    &Rank{
+        width: 90%;
+        max-width: 768px;
+        height: 100dvh;
+        margin: 20px auto 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        .modalTitle{
+            color: $white;
+            font-size: 24px;
+        }
+        .pergamino{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            &Container{
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 350px;
+                height: 490px;
+                margin: 0px auto;
+                background: transparent url(../img/pergamino.png) no-repeat top center;
+                background-size: cover;
+            }
+            &Rank{
+                position: relative;
+                width: 100%;
+                height: 490px;
+                margin: 0px auto;
+                padding: 30px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                &2{
+                    display: none;
+                }
+            }
+            &Title{
+                width: 240px;
+                height: auto;
+                @include proximaSemibold;
+                color: $green;
+                font-size: 22px;
+                text-align: center;
+            }
+            &Subtitle{
+                width: fit-content;
+                height: auto;
+                // margin: 30px auto 0px;
+                @include proximaSemibold;
+                color: $green;
+                font-size: 20px;
+                text-align: center;
+            }
+            .star{
+                &1{
+                    &::before {
+                        content: '★';
+                        position: relative;
+                        display: inline-block;
+                        font-size: 32px;
+                        color: $green;
+                    }
+                }
+                &2{
+                    &::before {
+                        content: '★ ★';
+                        position: relative;
+                        display: inline-block;
+                        font-size: 32px;
+                        color: $green;
+                    }
+                }
+                &3{
+                    &::before {
+                        content: '★ ★ ★';
+                        position: relative;
+                        display: inline-block;
+                        font-size: 32px;
+                        color: $green;
+                    }
+                }
+            }
+            &Text{
+                width: fit-content;
+                max-width: 300px;
+                height: auto;
+                margin: 0px auto;
+                @include proximaRegular;
+                color: #B99161;
+                font-size: 18px;
+                text-align: center;
+                text-wrap: balance;
+            }
+            &Textarea{
+                width: 240px;
+                height: 180px;
+                margin: 10px auto;
+                padding: 12px 12px;
+                border: 1px solid #B99161;
+                border-radius: 4px;
+                background-color: #f8f8f8;
+                @include proximaRegular;
+                font-size: 16px;
+                resize: none;
+                &:focus-visible{
+                    border: 2px solid #B99161;
+                    outline: none;
+                }
+                &::placeholder{
+                    color: #dac6ae;
+                }
+            }
+            .rating {
+                width: fit-content;
+                height: auto;
+                margin: 0px auto 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                &Container {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row-reverse;
+                }
+                input {
+                    display: none;
+                }
+                label {
+                    display: block;
+                    cursor: pointer;
+                    width: 40px;
+                    position: relative;
+                    &::before {
+                        content: '☆';
+                        font-size: 40px;
+                        color: $green;
+                        display: block;
+                    }
+                    &::after {
+                        content: '★';
+                        font-size: 40px;
+                        color: $yellow;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: opacity 0.5s ease;
+                    }
+                }
+                label:hover ~ label::after,
+                input:checked ~ label::after {
+                    opacity: 1;
+                }
+                input:checked ~ label {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+                &Alert{
+                    width: 90%;
+                    max-width: 400px;
+                    height: auto;
+                    color: $green;
+                    @include proximaRegular;
+                    font-size: 14px;
+                    text-decoration: underline;
+                    text-align: center;
+                    display: none;
+                }
+            }
+            .rating label:hover:after,
+            .rating input:checked ~ label:after {
+                opacity: 1;
+            }
+            &Bien{
+                position: relative;
+                width: 90%;
+                height: 490px;
+                margin: 0px auto;
+                padding: 30px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .imgBien{
+                    width: 200px;
+                    height: 250px;
+                    margin: 5px auto 10px;
+                    padding: 0px;
+                    background: transparent url(../img/img-bien.png) no-repeat center;
+                    background-size: contain;
+                }
+                .pergaminoText{
+                    margin: 0px auto 10px;
+                }
+                .descarga{
+                    @include proximaSemibold;
+                    text-decoration: underline;
+                    color: $pink;
+                }
+            }
+            &Mal{
+                position: relative;
+                width: 90%;
+                height: 490px;
+                margin: 0px auto;
+                padding: 30px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .imgMal{
+                    width: 200px;
+                    height: 170px;
+                    margin: 0px auto;
+                    padding: 0px;
+                    background: transparent url(../img/img-mal.png) no-repeat center;
+                    background-size: contain;
+                }
+                .pergaminoText{
+                    margin: 0px auto 10px;
+                }
+                .descarga{
+                    @include proximaSemibold;
+                    text-decoration: underline;
+                    color: $pink;
+                }
+            }
+            &Pista{
+                position: relative;
+                width: 90%;
+                height: 490px;
+                margin: 0px auto;
+                padding: 30px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+                .imgPista{
+                    width: 200px;
+                    height: 210px;
+                    margin: 0px auto;
+                    padding: 0px;
+                    background: transparent url(../img/pista-grinch.png) no-repeat center;
+                    background-size: contain;
+                }
+                .pergaminoText{
+                    margin: 0px auto;
+                }
+                .descarga{
+                    @include proximaSemibold;
+                    text-decoration: underline;
+                    color: $pink;
+                }
+            }
+        }
+    }
+    &Morfo{
+        flex: 0 0 auto;
+        width: 200px;
+        height: 70px;
+        background: transparent url(../img/morfo.svg) no-repeat center;
+        background-size: contain;
+    }
+    &Title{
+        // @include proximaSemibold;
+        font-family: "Berkshire Swash";
+        text-align: center;
+        font-size: 22px;
+        color: #ffd289;
+    }
+    &Text{
+        width: 90%;
+        // AJUSTAR SEGÚN LA CANTIDAD DE TEXTO
+        max-width: 400px;
+        height: auto;
+        @include proximaRegular;
+        text-align: center;
+        text-wrap: balance;
+        font-size: 16px;
+        color: $white;
+    }
+    // &Ilustration{
+    //     position: relative;
+    //     bottom: 0px;
+    //     width: 90%;
+    //     max-width: 400px;
+    //     &::after{
+    //         content: "";
+    //         display: block;
+    //         // AJUSTAR EN PROPORCIÓN DE LA IMÁGEN
+    //         padding-bottom: 80%;
+    //     }
+    //     &Img{
+    //         position: absolute;
+    //         width: 100%;
+    //         height: 100%;
+    //         background: transparent url(../img/fondoJuego-grinch.png) no-repeat center;
+    //         background-size: contain;
+    //     }
+    // }
+    &Ilustration{
+        position: relative;
+        width: 100%;
+        height: 370px;
+        &Cloud{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 120px;
+            background: transparent url(../img/nube.svg) no-repeat center;
+            background-size: contain;
+        }
+        &Sun{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 340px;
+            background: transparent url(../img/circulos.png) no-repeat center;
+            background-size: contain;
+        }
+        &Roy{
+            position: absolute;
+            bottom: 40px;
+            left: 0px;
+            right: 0px;
+            width: 100%;
+            height: 320px;
+            margin: 0px auto;
+            background: transparent url(../img/roy.png) no-repeat center;
+            background-size: contain;
+        }
+    }
+    .close{
+        cursor: pointer;
+    }
+}
+#pergamino1{
+    &::after{
+        content: '';
+        display: block;
+        position: relative;
+        bottom: 65px;
+        left: 0;
+        right: 0;
+        width: 122px;
+        height: 152px;
+        margin: 0px auto;
+        padding: 0px;
+        background: transparent url(../img/modalRoy.png) no-repeat center;
+        background-size: contain;
+    }
+}
+.pergamino2, .pergamino3, .pergamino4{
+    display: none;
+}

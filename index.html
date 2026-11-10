@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Julio</title>
+    <!-- SEO básico -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio César Castro | Front-end Designer</title>
+    <meta name="description" content="Portafolio de Julio César Castro, diseñador digital enfocado en UX-UI Design, diseño web, desarrollo front-end y branding. Conoce mis proyectos y experiencia profesional.">
+    <meta name="author" content="Julio César Castro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://holajulio.com/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Julio César Castro">
+    <meta property="og:title" content="Julio César Castro | Front-end Designer">
+    <meta property="og:description" content="Diseño de interfaces, experiencias web, desarrollo front-end e identidad visual. Conoce mis proyectos destacados.">
+    <meta property="og:url" content="https://holajulio.com/">
+    <meta property="og:image" content="https://holajulio.com/media/images/og-portfolio.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Julio César Castro — Front-end Designer">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Julio César Castro | Front-end Designer">
+    <meta name="twitter:description" content="Portafolio de diseño UI, diseño web, desarrollo front-end y branding.">
+    <meta name="twitter:image" content="https://holajulio.com/media/images/og-portfolio.jpg">
+    <!-- Navegador -->
+    <meta name="theme-color" content="#171717">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="media/images/favicon.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="navContainer">
+            <div class="navLogo">
+                <svg viewBox="0 0 254 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M199 235.622C174.247 268.635 134.839 290 90.4499 290C40.4941 290 0 249.42 0 199.37C0 194.371 4.04773 190.307 9.04586 190.307C14.0355 190.307 18.0832 194.371 18.0832 199.37C18.0832 239.414 50.4819 271.874 90.4499 271.874V0H198.992V54.3782C149.036 54.3782 108.542 94.9493 108.542 145C108.542 195.051 149.044 235.622 199 235.622Z" fill="#030404"/>
+                    <path d="M238.046 106.251C228.197 96.3633 214.602 90.2511 199.586 90.2511V199.749C214.611 199.749 228.214 193.628 238.063 183.741L238.514 183.253C242.055 179.692 247.801 179.692 251.342 183.253C254.883 186.823 254.883 192.601 251.342 196.162L250.993 196.539C237.85 209.799 219.676 218 199.586 218C159.501 218 127 185.316 127 145.004C127 104.684 159.501 72 199.586 72C219.591 72 237.697 80.1411 250.831 93.2986L251.104 93.641C254.773 97.0653 254.986 102.844 251.572 106.533C248.167 110.223 242.421 110.437 238.752 107.004L238.046 106.251Z" fill="#030404"/>
+                </svg>
+            </div>
+            <!-- DESKTOP -->
+            <ul class="navList">
+                <li class="navListItem">
+                    <a href="#skills">
+                        Habilidades
+                    </a>
+                </li>
+                <li class="navListItem">
+                    <a href="#project">
+                        Proyectos
+                    </a>
+                </li>
+                <li class="navListItem">
+                    <a href="#contact">
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+            <!-- MODE -->
+            <div class="container">
+                <input type="checkbox" id="theme-toggle" class="hidden-checkbox" checked>
+                <label for="theme-toggle" class="toggle-button">
+                    <div class="icon-wrapper">
+                    <svg class="icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+                    </div>
+                </label>
+            </div>
+            <!-- MOBILE -->
+            <!-- --- -->
+            <input type="checkbox" class="mobileInput" id="mobileInput" />
+            <label for="mobileInput" class="mobileButton" id="mobileButton">
+                <span></span>
+            </label>
+            <div class="mobile" id="mobile">
+                <ul class="mobileList">
+                    <li class="mobileListItem">
+                        <a href="#skills">
+                            Habilidades
+                        </a>
+                    </li>
+                    <li class="mobileListItem">
+                        <a href="#project">
+                            Proyectos
+                        </a>
+                    </li>
+                    <li class="mobileListItem">
+                        <a href="#contact">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- --- -->
+        </div>
+    </nav>
+    <!-- HERO -->
+    <section class="section hero" id="hero">
+        <div class="sectionContainer heroContainer">
+            <div class="heroText">
+                <div class="heroTextFirst">
+                    <h1 class="title">
+                        Julio César
+                    </h1>
+                    <h2 class="subtitle">
+                        Front-end Designer
+                    </h2>
+                </div>
+                <div class="heroTextSecond">
+                    <p class="text">
+                        Profesional con experiencia en UX, UI Front-end y diseño 
+                        digital para la creación de proyectos digitales, sitios 
+                        web e interfaces para diferentes productos y servicios.
+                    </p>
+                    <p class="text">
+                        Conocimientos que me permite entender un proyecto desde 
+                        su planteamiento visual hasta su implementación.
+                    </p>
+                </div>
+            </div>
+            <div class="heroImage"></div>
+        </div>
+        <div class="chevron bottom"></div>
+    </section>
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+        <div class="sectionContainer skillsContainer">
+            <div class="skillsInfo">
+                <h2 class="title">
+                    Habilidades y tecnologías
+                </h2>
+                <p class="subtitle">
+                    Las herramientas detrás de mi trabajo.
+                </p>
+                <p class="text">
+                    Combino diseño y front-end para crear experiencias digitales claras,
+                    responsivas y funcionales.
+                </p>
+            </div>
+            <div class="cards skillsGroup">
+                <div class="skillsSlider slider">
+                    <button class="sliderArrow sliderPrev"
+                            type="button"
+                            aria-label="Ver habilidades anteriores">
+                        &#10094;
+                    </button>
+                    <div class="sliderViewport">
+                        <ul class="sliderList">
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon html"></div>
+                                <h3 class="skillsName">
+                                    HTML5
+                                </h3>
+                                <p class="skillsDescription">
+                                    Maquetación web semántica.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon css"></div>
+                                <h3 class="skillsName">
+                                    CSS3
+                                </h3>
+                                <p class="skillsDescription">
+                                    Estilos y layouts responsivos.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon sass"></div>
+                                <h3 class="skillsName">
+                                    SASS
+                                </h3>
+                                <p class="skillsDescription">
+                                    Arquitectura modular de estilos.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon js"></div>
+                                <h3 class="skillsName">
+                                    JavaScript
+                                </h3>
+                                <p class="skillsDescription">
+                                    Interacciones y comportamiento web.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon github"></div>
+                                <h3 class="skillsName">
+                                    GitHub
+                                </h3>
+                                <p class="skillsDescription">
+                                    Repositorios y control de versiones.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon figma"></div>
+                                <h3 class="skillsName">
+                                    Figma
+                                </h3>
+                                <p class="skillsDescription">
+                                    Interfaces, prototipos y componentes.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon xd"></div>
+                                <h3 class="skillsName">
+                                    Adobe XD
+                                </h3>
+                                <p class="skillsDescription">
+                                    Interfaces, prototipos y componentes.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon ps"></div>
+                                <h3 class="skillsName">
+                                    Photoshop
+                                </h3>
+                                <p class="skillsDescription">
+                                    Edición y composición gráfica.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon ai"></div>
+                                <h3 class="skillsName">
+                                    Illustrator
+                                </h3>
+                                <p class="skillsDescription">
+                                    Gráficos vectoriales e identidad.
+                                </p>
+                            </li>
+                            <li class="cardsItem skillsItem sliderItem text">
+                                <div class="skillsIcon ae"></div>
+                                <h3 class="skillsName">
+                                    After Effects
+                                </h3>
+                                <p class="skillsDescription">
+                                    Animación y motion graphics.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="sliderArrow sliderNext"
+                            type="button"
+                            aria-label="Ver más habilidades">
+                        &#10095;
+                    </button>
+                    <div class="sliderDots"
+                        aria-label="Páginas de habilidades">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section class="section project" id="project">
+        <div class="sectionContainer projectContainer">
+            <div class="projectInfo">
+                <p class="title projectTitle">
+                    Proyectos destacados
+                </p>
+                <p class="subtitle projectSubtitle">
+                    Una muestra de mi trabajo.
+                </p>
+                <p class="text projectText">
+                    Una selección de experiencias que reflejan mi enfoque en UI, diseño web y desarrollo front-end.
+                </p>
+            </div>
+            <div class="projectGrid">
+                <a class="projectItem modalBtn" data-project="rallys">
+                    <div class="projectItemImg projectItemRallys"></div>
+                    <div class="projectItemInfo">
+                        <div class="projectItemData">
+                            <p class="projectItemTitle text">
+                                Rallys Web
+                                <br>
+                                <span class="projectItemSubtitle text">
+                                    Grupo Salinas
+                                </span>
+                            </p>
+                            <p class="projectItemText text">
+                                Serie de juegos y experiencias web interactivas desarrolladas para campañas institucionales y dinámicas internas de Grupo Salinas.
+                            </p>
+                            <ul class="projectItemTags">
+                                <li class="text">
+                                    Juegos web
+                                </li>
+                                <li class="text">
+                                    Interacción
+                                </li>
+                                <li class="text">
+                                    Front-end
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="projectIcon"></div>
+                    </div>
+                </a>
+                <a class="projectItem modalBtn" data-project="resort-guide">
+                    <div class="projectItemImg projectItemResortguide"></div>
+                    <div class="projectItemInfo">
+                        <div class="projectItemData">
+                                <p class="projectItemTitle text">
+                                    Resort Guide
+                                    <br>
+                                    <span class="projectItemSubtitle text">
+                                        Royal Holiday
+                                    </span>
+                                </p>
+                            <p class="projectItemText text">
+                                Transformación de una guía turística impresa en un producto digital para consultar destinos, hospedaje, actividades y créditos vacacionales.
+                            </p>
+                            <ul class="projectItemTags">
+                                <li class="text">
+                                    Producto digital
+                                </li>
+                                <li class="text">
+                                    Diseño de interfaces
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="projectIcon"></div>
+                    </div>
+                </a>
+                <a class="projectItem modalBtn" data-project="europe-collection">
+                    <div class="projectItemImg projectItemEuropecollection"></div>
+                    <div class="projectItemInfo">
+                        <div class="projectItemData">
+                            <p class="projectItemTitle text">
+                                Europe Collection Services
+                                <br>
+                                <span class="projectItemSubtitle text">
+                                    Royal Holiday
+                                </span>
+                            </p>
+                            <p class="projectItemText text">
+                                Desarrollo de identidad visual y sitio web corporativo para una nueva unidad de servicios de cobranza del sector turístico.
+                            </p>
+                            <ul class="projectItemTags">
+                                <li class="text">
+                                    Branding
+                                </li>
+                                <li class="text">
+                                    Diseño web
+                                </li>
+                                <li class="text">
+                                    Front-end
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="projectIcon"></div>
+                    </div>
+                </a>
+                <a class="projectItem modalBtn" data-project="descubre-punta-cana">
+                    <div class="projectItemImg projectItemDescubrepuntacana"></div>
+                    <div class="projectItemInfo">
+                        <div class="projectItemData">
+                            <p class="projectItemTitle text">
+                                Descubre Punta Cana
+                                <br>
+                                <span class="projectItemSubtitle text">
+                                    Royal Holiday
+                                </span>
+                            </p>
+                            <p class="projectItemText text">
+                                Identidad gráfica y landing page promocional para presentar hoteles, beneficios y opciones de hospedaje en Punta Cana.
+                            </p>
+                            <ul class="projectItemTags">
+                                <li class="text">
+                                    Branding
+                                </li>
+                                <li class="text">
+                                    Diseño web
+                                </li>
+                                <li class="text">
+                                    Front-end
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="projectIcon"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <dialog class="modal" aria-labelledby="modalTitle">
+            <div class="modalContainer">
+                <form method="dialog" class="modalHeader">
+                    <button class="modalClose" aria-label="Cerrar proyecto">
+                        <!-- Conserva aquí tu SVG de cierre -->
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </form>
+                <div class="modalContent">
+                    <header class="modalIntro">
+                        <p class="modalEyebrow text" id="modalCompany"></p>
+                        <h2 class="modalTitle title" id="modalTitle"></h2>
+                        <p class="modalSubtitle subtitle" id="modalSubtitle"></p>
+                        <ul class="modalTags text" id="modalTags"></ul>
+                    </header>
+                    <figure class="modalHero">
+                        <img id="modalCover" src="" alt="">
+                    </figure>
+                    <section class="modalSection">
+                        <h3 class="subtitle">Overview</h3>
+                        <p id="modalOverview" class="text"></p>
+                    </section>
+                    <section class="modalSection">
+                        <h3 class="subtitle">Mi contribución</h3>
+                        <p id="modalContribution" class="text"></p>
+                    </section>
+                    <section class="modalSection">
+                        <h3 class="subtitle">Diseño y solución</h3>
+                        <p id="modalSolution" class="text"></p>
+                        <div class="modalGallery" id="modalGallery"></div>
+                    </section>
+                    <section class="modalSection">
+                        <h3 class="subtitle">Herramientas y tecnologías</h3>
+                        <ul class="modalTools" id="modalTools"></ul>
+                    </section>
+                </div>
+            </div>
+        </dialog>
+    </section>
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+        <div class="sectionContainer contactContainer">
+            <div class="contactImage"></div>
+            <div class="contactInfo">
+                <p class="contactTitle title">
+                    Conversemos.
+                </p>
+                <p class="contactText text">
+                    Si tienes un proyecto, idea o quieres conocer más 
+                    sobre mi trabajo, no dudes en
+                    <a href="mailto:juliocastro.dg@gmail.com" class="contactMail">
+                        contactarme.
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footerContainer">
+            <p class="footerText">
+                ©Julio César 2026. Derechos reservados.
+            </p>
+            <p class="footerText">
+                Hecho con creatividad y código.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

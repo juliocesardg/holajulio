@@ -1,0 +1,37 @@
+
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.title{
+    width: fit-content;
+    height: auto;
+    color: var.$black-900;
+    font-weight: var.$font-weight-bold;
+    font-size: 26px;
+    transition: all 0.3s ease-in-out;
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+    }
+}
+.subtitle{
+    width: fit-content;
+    height: auto;
+    color: var.$black-700;
+    font-weight: var.$font-weight-medium;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+    }
+}
+.text{
+    width: fit-content;
+    height: auto;
+    color: var.$black-700;
+    font-weight: var.$font-weight-medium;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    @media screen and (max-width: 768px){
+        font-size: 14px;
+    }
+}
