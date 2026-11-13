@@ -875,6 +875,12 @@ body:has(.hidden-checkbox:checked) .footerText {
     gap: 10px;
   }
 }
+@media (max-width: 700px) {
+  .heroContainer {
+    justify-content: flex-start;
+    margin-top: 60px;
+  }
+}
 .heroText {
   width: 49%;
   height: auto;
@@ -906,7 +912,6 @@ body:has(.hidden-checkbox:checked) .footerText {
     align-items: center;
     flex-wrap: nowrap;
     gap: 10px;
-    margin-top: 40px;
   }
   .heroText .heroTextSecond {
     width: 100%;
